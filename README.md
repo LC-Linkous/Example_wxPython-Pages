@@ -4,6 +4,9 @@
 * [Project Description](#Project-Description)
 * [Requirements](#Requirements)
 * [How to Use](#How-to-Use)
+* [Images](#Images)
+* [Future Work](#Future-Work)
+
 
 
 ## Project Description
@@ -24,13 +27,26 @@ installed using 'pip install -r requirements.txt'
 * pyparsing==3.0.9
 * python-dateutil==2.8.2
 * six==1.16.0
+* wxPython==4.2.0
 
 
 ## How to Use
 The program can be run from main.py, either in an IDE or with 'python src/main.py' from the root directory
 
 
+## Images
 
+<p align="center">
+
+<img src="https://github.com/LC-Linkous/Example_wxPython-Pages/blob/main/imgs/help_page.PNG" width="250">
+
+<img src="https://github.com/LC-Linkous/Example_wxPython-Pages/blob/main/imgs/home_page.PNG" width="250">
+
+<img src="https://github.com/LC-Linkous/Example_wxPython-Pages/blob/main/imgs/settings_page.PNG" width="250">
+</p>
+
+
+## Future Work
 
 
 

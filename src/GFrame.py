@@ -75,19 +75,27 @@ class SetupPage(wx.Panel):
         wx.Panel.__init__(self, parent=parent)
         # current program loc as default. def here because used in setup panel
         self.parent = parent
-        self.sPanel = SetupSettingsPanel(self)
+        self.sPanelLeft = SetupSettingsPanel(self)
+        self.sPanelRight = SetupSettingsPanel(self)
 
         # update button
         self.updateBtn = wx.Button(self, wx.ID_ANY, label='UPDATE', name='UPDATE_BUTTON')
         self.updateBtn.Bind(wx.EVT_BUTTON, self.updatePageOnClick)
 
-        #layout
-        root_sizer = wx.BoxSizer(wx.VERTICAL)
-        root_sizer.Add(self.updateBtn)  # , wx.EXPAND)
-        s = wx.BoxSizer(wx.HORIZONTAL)
-        s.Add(self.sPanel) #, 1, wx.EXPAND)
-        s.Add(root_sizer)  # , 1, wx.EXPAND)
-        self.SetSizer(s)
+        #layout using nested spacers
+        # the main sizer for the panel
+        root_sizer = wx.BoxSizer(wx.VERTICAL) 
+        # the horizontal spacer holding the settings panels
+        # this example uses two of the same panels to show reusability 
+        settings_sizer = wx.BoxSizer(wx.HORIZONTAL)
+        settings_sizer.Add(self.sPanelLeft)
+        settings_sizer.AddSpacer(10) #10 px spacer
+        settings_sizer.Add(self.sPanelRight)
+
+        root_sizer.Add(settings_sizer)
+        root_sizer.AddSpacer(10)
+        root_sizer.Add(self.updateBtn) 
+        self.SetSizer(root_sizer)
 
 
     def updatePageOnClick(self, event):
@@ -97,6 +105,8 @@ class HomePage(wx.Panel):
      def __init__(self, parent):
         wx.Panel.__init__(self, parent=parent)
         self.parent= parent
+        self.SetBackgroundColour('PURPLE')
+
         self.sPanel = HomeSettingsPanel(self)
 
         root_sizer = wx.BoxSizer(wx.VERTICAL)
@@ -107,6 +117,7 @@ class HomePage(wx.Panel):
 class HelpPage(wx.Panel):
     def __init__(self, parent):
         wx.Panel.__init__(self, parent=parent)
+        #uses a static position, not a spaccer
         wx.StaticText(self, label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut fringilla est, \n"
                                   "quis tincidunt ex. Duis lorem risus, tincidunt et ante sed, porta sollicitudin \n"
                                   "neque. Nulla faucibus pulvinar justo sit amet varius. Phasellus vel maximus sem. \n"
@@ -147,6 +158,9 @@ class HomeSettingsPanel(wx.Panel):
     def __init__(self, parent):
         wx.Panel.__init__(self, parent=parent) #, size=(250, 425))
         self.parent = parent
+
+
+
 
 if __name__ == "__main__":
     ## way #1 to test
