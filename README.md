@@ -38,15 +38,17 @@ The program can be run from main.py, either in an IDE or with 'python src/main.p
 
 <p align="center">
 
-<img src="https://github.com/LC-Linkous/Example_wxPython-Pages/blob/main/imgs/help_page.PNG" width="250">
+<img src="https://github.com/LC-Linkous/Example_wxPython-Pages/blob/master/imgs/help_page.PNG" width="250">
 
-<img src="https://github.com/LC-Linkous/Example_wxPython-Pages/blob/main/imgs/home_page.PNG" width="250">
+<img src="https://github.com/LC-Linkous/Example_wxPython-Pages/blob/master/imgs/home_page.PNG" width="250">
 
-<img src="https://github.com/LC-Linkous/Example_wxPython-Pages/blob/main/imgs/settings_page.PNG" width="250">
+<img src="https://github.com/LC-Linkous/Example_wxPython-Pages/blob/master/imgs/settings_page.PNG" width="250">
 </p>
 
 
 ## Future Work
+
+This is a living project intended to demo simple features and class organization as part of a blog series. It will be updated sporatically, and with most documentation in the linked blog posts
 
 
 
